@@ -19,6 +19,11 @@ Fixed::~Fixed() {
 	std::cout << "Deconstructor called" << std::endl;
 };
 
+Fixed::Fixed(const Fixed& f) {
+	std::cout << "copie créée" << std::endl;
+	(void)f;
+}
+
 int	Fixed::getRawBits(void) const {
 }
 
