@@ -16,15 +16,19 @@
 
 class	Fixed {
 	private:
-
+		static const int	const_val;
+		int	value;
 	
 	public:
 		Fixed();
 		~Fixed();
-		Fixed(const Fixed&);
+		Fixed(const Fixed& f);
+		Fixed& operator=(const Fixed& f);
 
-		int	Fixed::getRawBits(void) const;
+		int	getRawBits(void) const;
 		void	setRawBits(int const raw);
 };
 
 #endif
+
+// faire en sorte que ca ecrive avec la virgule
