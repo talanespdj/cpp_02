@@ -22,11 +22,15 @@ class	Fixed {
 	public:
 		Fixed();
 		~Fixed();
+		// Fixed(const int val);
+		// Fixed(const float val);
 		Fixed(const Fixed& f);
 		Fixed& operator=(const Fixed& f);
 
 		int	getRawBits(void) const;
 		void	setRawBits(int const raw);
+		float	toFloat(void) const;
+		int	toInt(void) const;
 };
 
 #endif
