@@ -16,14 +16,14 @@
 
 class	Fixed {
 	private:
-		static const int	const_val;
+		static const int	const_val = 8;
 		int	value;
 	
 	public:
 		Fixed();
 		~Fixed();
-		// Fixed(const int val);
-		// Fixed(const float val);
+		Fixed(const int val);
+		Fixed(const float val);
 		Fixed(const Fixed& f);
 		Fixed& operator=(const Fixed& f);
 
@@ -34,3 +34,5 @@ class	Fixed {
 };
 
 #endif
+
+roundf
