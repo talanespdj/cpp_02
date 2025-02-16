@@ -34,5 +34,3 @@ class	Fixed {
 };
 
 #endif
-
-roundf

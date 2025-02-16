@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "Fixed.hpp"
+#include <math.h>
 
 Fixed::Fixed() {
 	std::cout << "Default constructor called" << std::endl;
@@ -18,11 +19,12 @@ Fixed::Fixed() {
 
 Fixed::Fixed(const int val) {
 	std::cout << "int val constructor called" << std::endl;
-		
+	this->value = val << this->const_val;		
 }
 
 Fixed::Fixed(const float val) {
-	(void)val;
+	std::cout << "float val constructor called" << std::endl;
+	this->value = roundf(val * (1 << this->const_val));
 }
 
 Fixed::~Fixed() {
@@ -51,10 +53,10 @@ void	Fixed::setRawBits(int const raw) {
 	this->value = raw;
 }
 
-float	toFloat(void) const {
-
-
+float	Fixed::toFloat(void) const {
+	return (this->value);
 }
 
-int	toInt(void) const {
+int	Fixed::toInt(void) const {
+	return (this->value >> this->const_val);
 }
