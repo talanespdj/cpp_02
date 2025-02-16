@@ -45,7 +45,7 @@ Fixed&	Fixed::operator=(const Fixed& f) {
 
 int	Fixed::getRawBits(void) const {
 	std::cout << "getRawBits member function called" << std::endl;
-	return (this->value);
+	return ((float)this->value);
 }
 
 void	Fixed::setRawBits(int const raw) {
@@ -59,4 +59,9 @@ float	Fixed::toFloat(void) const {
 
 int	Fixed::toInt(void) const {
 	return (this->value >> this->const_val);
+}
+
+std::ostream&	operator<<(std::ostream &obj, Fixed const &f) {
+	obj << f.toFloat();
+	return (obj);
 }

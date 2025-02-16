@@ -33,4 +33,6 @@ class	Fixed {
 		int	toInt(void) const;
 };
 
+std::ostream&	operator<<(std::ostream &obj, Fixed const &f);
+
 #endif
