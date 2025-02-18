@@ -17,7 +17,7 @@
 class	Fixed {
 	private:
 		static const int	const_val = 8;
-		int	value;
+		int	fp_val;
 	
 	public:
 		Fixed();
