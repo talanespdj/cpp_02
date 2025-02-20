@@ -12,7 +12,6 @@
 #ifndef POINT_HPP
 # define POINT_HPP
 
-# include <iostream>
 # include "Fixed.hpp"
 
 class	Point {
@@ -22,7 +21,7 @@ class	Point {
 	
 	public:
 		Point();
-		Point(int x, int y);
+		Point(float const x, float const y);
 		~Point();
 		Point(const Point& p);
 		Point& operator=(const Point& p);
@@ -31,5 +30,7 @@ class	Point {
 		Fixed const& getY() const;
 
 };
+
+bool	bsp(const Point& a, const Point& b, const Point& c, const Point& point);
 
 #endif

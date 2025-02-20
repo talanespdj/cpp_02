@@ -10,30 +10,23 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "Point.hpp"
-#include <cmath>
 
-Point::Point() : x(0), y(0) {
-	std::cout << "Point constructor called" << std::endl;
+Point::Point() : x(0.0f), y(0.0f) {
 };
 
-Point::Point(int x, int y) : x(x), y(y) {
+Point::Point(float x, float y) : x(x), y(y) {
 };
 
 Point::~Point() {
-	std::cout << "Point Deconstructor called" << std::endl;
 };
 
 Point::Point(const Point& p) {
-	std::cout << "Point Copy constructor called" << std::endl;
 	*this = p;
 }
 
 Point&	Point::operator=(const Point& p) {
-	std::cout << "Copy assignment operator called" << std::endl;
-	if (this != &p) {
-		this->x = p.x;
-		this->y = p.y;
-	}
+	if (this == &p)
+		return (*this);
 	return (*this);
 }
 

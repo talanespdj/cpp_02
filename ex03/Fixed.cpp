@@ -12,32 +12,25 @@
 #include "Fixed.hpp"
 #include <cmath>
 
-Fixed::Fixed() {
-	std::cout << "Default constructor called" << std::endl;
-	fp_val = 0;
+Fixed::Fixed() : fp_val(0){
 };
 
 Fixed::Fixed(const int val) {
-	std::cout << "int val constructor called" << std::endl;
 	setRawBits(val << this->const_val);
 }
 
 Fixed::Fixed(const float val) {
-	std::cout << "float val constructor called" << std::endl;
 	this->setRawBits((int)roundf(val * (1 << this->const_val)));
 }
 
 Fixed::~Fixed() {
-	std::cout << "Deconstructor called" << std::endl;
 };
 
 Fixed::Fixed(const Fixed& f) {
-	std::cout << "Copy constructor called" << std::endl;
 	*this = f;
 }
 
 Fixed&	Fixed::operator=(const Fixed& f) {
-	std::cout << "Copy assignment operator called" << std::endl;
 	if (this != &f)
 		this->fp_val = f.getRawBits();
 	return (*this);
@@ -77,6 +70,11 @@ Fixed	Fixed::operator*(const Fixed& f) const {
 	return Fixed(this->toFloat() * f.toFloat());
 }
 Fixed	Fixed::operator/(const Fixed& f) const {
+
+	if (f.toFloat() == 0.0f) {
+		std::cerr << "Division by zero error" << std::endl;
+		exit (EXIT_FAILURE);
+	}
 	return Fixed(this->toFloat() / f.toFloat());
 }
 
