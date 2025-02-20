@@ -12,10 +12,11 @@
 #include "Point.hpp"
 #include <cmath>
 
-Point::Point() {
+Point::Point() : x(0), y(0) {
 	std::cout << "Point constructor called" << std::endl;
-	this->x.setRawBits(0);
-	this->y.set= 0;
+};
+
+Point::Point(int x, int y) : x(x), y(y) {
 };
 
 Point::~Point() {
@@ -36,3 +37,10 @@ Point&	Point::operator=(const Point& p) {
 	return (*this);
 }
 
+Fixed const&	Point::getX() const {
+	return (this->x);
+}
+
+Fixed const&	Point::getY() const {
+	return (this->y);
+}

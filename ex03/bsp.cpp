@@ -1,35 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Point.hpp                                          :+:      :+:    :+:   */
+/*   bsp.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tespandj <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/07 05:47:38 by tespandj          #+#    #+#             */
-/*   Updated: 2025/02/07 20:25:02 by tespandj         ###   ########.fr       */
+/*   Created: 2025/02/19 00:26:37 by tespandj          #+#    #+#             */
+/*   Updated: 2025/02/19 00:26:46 by tespandj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#ifndef POINT_HPP
-# define POINT_HPP
+#include "Point.hpp"
 
-# include <iostream>
-# include "Fixed.hpp"
+///demi plan d'inequation
 
-class	Point {
-	private:
-		const Fixed	x;
-		const Fixed	y;
+/// @return True if point is inside abc, False if it is on the edge or outside
+bool	bsp(Point const a, Point const b, Point const c, Point const point) {
+
+	bool	valid = NULL;
+
+	if (valid = true)
+		return (true);
+	return (false);
 	
-	public:
-		Point();
-		Point(int x, int y);
-		~Point();
-		Point(const Point& p);
-		Point& operator=(const Point& p);
+}
 
-		Fixed const& getX() const;
-		Fixed const& getY() const;
-
-};
-
-#endif

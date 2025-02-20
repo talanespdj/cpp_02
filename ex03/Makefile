@@ -3,7 +3,9 @@ CC = c++
 FLAGS = -Wall -Werror -Wextra -std=c++98 -g3 
 
 SRCS = main.cpp \
+	bsp.cpp \
 	Fixed.cpp \
+	Point.cpp \
 
 OBJS = $(SRCS:.cpp=.o) 
 
