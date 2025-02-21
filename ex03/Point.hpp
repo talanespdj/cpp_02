@@ -31,6 +31,6 @@ class	Point {
 
 };
 
-bool	bsp(const Point& a, const Point& b, const Point& c, const Point& point);
+bool	bsp(Point const a, Point const b, Point const c, Point const point);
 
 #endif

@@ -15,16 +15,17 @@
 
 int	main(void)
 {
-	Point a(3, 1);
-	Point b(3, 4);
-	Point c(-2, 1);
+	Point a(-3, 1);
+	Point b(0, 0);
+	Point c(0, 3);
 
-	Point testPoint(0.63, 2.8);
+	Point testPoint(-1.53, 1.8);
 
+	// std::cout << testPoint.getX() << "\t\t\tDATA" << std::endl;
 	if (bsp(a, b, c, testPoint))
-		std::cout << "\nLe point est à l'intérieur du triangle.\n\n" << std::endl;
+		std::cout << "Le point est à l'intérieur du triangle." << std::endl;
 	else
-		std::cout << "\nLe point est à l'extérieur du triangle.\n" << std::endl;
+		std::cout << "Le point est à l'extérieur du triangle." << std::endl;
 	return 0; 
 }
 

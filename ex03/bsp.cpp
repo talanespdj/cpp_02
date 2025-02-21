@@ -14,11 +14,10 @@
 ///demi plan d'inequation
 
 /// @return True if point is inside abc, False if it is on the edge or outside
-bool	bsp(const Point& a,const  Point& b,const  Point& c, const Point& point) {
+bool	bsp(Point const a, Point const b, Point const c, Point const point) {
 	Fixed	ab;
 	Fixed	bc;
 	Fixed	ca;
-
 
 	ab = ( a.getX() - point.getX() ) * ( b.getY() - point.getY() ) \
 		- ( a.getY() - point.getY()) * ( b.getX() - point.getX() );
@@ -26,12 +25,11 @@ bool	bsp(const Point& a,const  Point& b,const  Point& c, const Point& point) {
 		- ( b.getY() - point.getY()) * ( c.getX() - point.getX() );
 	ca = ( c.getX() - point.getX() ) * ( a.getY() - point.getY() ) \
 		- ( c.getY() - point.getY()) * ( a.getX() - point.getX() );
-	if (( ab < 0 && bc < 0 && ca < 0) || (ab > 0 && bc > 0 && ca > 0))
+	if ((ab < 0 && bc < 0 && ca < 0) || (ab > 0 && bc > 0 && ca > 0))
 		return ( true );
-	if (ab == 0 || bc == 0 || ca == 0)
-		return (false);
 	return (false);
 }
+
 
 
 
